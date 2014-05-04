@@ -1,0 +1,6 @@
+<div ng-repeat="(key,link) in user.links">
+	<p>{{link.url}}</p>
+	<p>{{link.title || 'undefined'}}</p>
+	<img ng-src="{{link.image}}">
+	<hr>
+</div>
