@@ -5,12 +5,22 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 // All animations are turned off in bower_components/animate-sass/helpers/_settings.scss by default to save space.
 // Override them lika-so to use specific animations:
 $use-fadeInUp: true;
+$use-fadeIn: true;
 
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 @import "../bower_components/colors/sass/colors.scss";
 @import "../bower_components/animate-sass/animate.scss";
 // endbower
+
+
+// Colors
+$dark: #494949;
+$medium: #818181;
+
+
+// Other stylesheets
+@import 'links';
 
 
 .browsehappy {
@@ -27,6 +37,15 @@ body {
     -webkit-backface-visibility: hidden; // Addresses a small issue in webkit: http://bit.ly/NEdoDq
 }
 
+
+
+// Font styles
+h1{
+    color: $dark;
+    // font-size: 23px;
+    font-size: 14pt;
+}
+
 /* Base style for animations */
 .animated {
     @include prefixer(animation-duration, $base-duration);
@@ -37,80 +56,11 @@ body {
     }
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    @include animation-delay(0.3s);
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-    @include animation-delay(0.6s);
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
-    }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
+        max-width: 768px;
+        // max-width: 870px;
     }
 }
-

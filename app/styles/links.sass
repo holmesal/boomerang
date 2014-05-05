@@ -1,0 +1,76 @@
+// $medium: #818181
+
+$spacing: 50px
+$barHeight: 50px
+
+.buttons
+	width: 100%
+	height: $barHeight
+	// background-color: red
+	margin-bottom: $spacing
+
+	a
+		height: 100%
+		width: $barHeight
+		position: relative
+		// background-color: green
+
+		img 
+			height: 50%
+			position: absolute
+			top: 25%
+
+		&.left
+			float: left
+			img
+				left: 25%
+		&.right
+			float: right
+			img
+				right: 25%
+
+
+.linkBlock
+	width: 100%
+	position: relative
+	$size: 16px
+	// min-height: $size + 10px
+	margin-bottom: $spacing
+	overflow: auto
+
+	.image
+		position: absolute
+		top: 4px
+		// left: 20px
+		width: $size
+		height: $size
+		background-size: cover
+		background-position: center center
+		// @include transition(0.3s linear all)
+
+	.linkContent
+		padding-left: $size + 10px
+
+		.title
+			margin-top: 0px
+			@include transition(100ms linear all)
+
+		.description
+			color: $medium
+
+		.remove
+			float: right
+
+	&:hover
+		cursor: pointer
+
+		.linkContent
+
+			.title
+				color: #4A90E2
+				// opacity: 0.56
+
+		// background-color: gray
+
+		// .image
+		// 	top: 10px

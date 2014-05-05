@@ -15,16 +15,27 @@ angular
     .when '/',
       templateUrl: 'views/main.html'
       controller: 'MainCtrl'
+      resolve: 
+        user: (Firesolver) -> Firesolver.currentUser()
     .when '/add',
       templateUrl: 'views/add.html'
       controller: 'AddCtrl'
       resolve: 
-        User: (Firesolver) -> Firesolver.getUser()
-    .when '/links',
+        authUser: (Firesolver) -> Firesolver.authenticate()
+        user: (Firesolver) -> Firesolver.currentUser()
+    .when '/@:handle',
       templateUrl: 'views/links.html'
       controller: 'LinksCtrl'
       resolve: 
-        User: (Firesolver) -> Firesolver.getUser()
+        user: (Firesolver) -> Firesolver.currentUser()
+        owner: (Firesolver, $route) ->
+          Firesolver.get "users/#{$route.current.params.handle}"
+    .when '/settings',
+      templateUrl: 'views/settings.html'
+      controller: 'SettingsCtrl'
+      resolve: 
+        authUser: (Firesolver) -> Firesolver.authenticate()
+        user: (Firesolver) -> Firesolver.currentUser()
     .otherwise
       redirectTo: '/'
 
@@ -37,5 +48,6 @@ angular
     # Log any route change errors
     $rootScope.$on '$routeChangeError', (event, current, previous, rejection) ->
       console.error 'failed to change route'
+      console.error "to route #{current}"
       console.error rejection
       $location.path '/'
