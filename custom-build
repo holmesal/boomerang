@@ -107,15 +107,20 @@ PATH=$build_dir/vendor/node/bin:$PATH
 # Run subsequent node/npm commands from the build path
 cd $build_dir
 
+# Get ruby
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+
 # Install compass and sass
 gem install compass
 gem install sass
+
+# Patch weird default encoding bug
 
 npm install 
 npm install -g bower
 npm install -g grunt-cli
 bower install --allow-root
-grunt build --verbose --force
+grunt build-server --verbose --force
 
 ls -la
 
