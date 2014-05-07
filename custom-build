@@ -113,4 +113,7 @@ cd $1
 
 ls -la
 
-npm install && bower install && grunt build
+npm install 
+npm install bower
+bower install
+grunt build
