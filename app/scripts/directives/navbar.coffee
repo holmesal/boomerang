@@ -29,26 +29,25 @@ angular.module('boomerangApp')
 
 		prepButton = (name) ->
 
-			switch name
+			button = switch
 
-				when 'links'
+				when name is 'links'
 					path: "#/@#{$rootScope.user.$id}"
-					image: 'list.svg'
 
-				when 'add'
+				when name is 'add'
 					path: '#/add'
-					image: 'plus.svg'
 
-				when 'settings'
+				when name is 'settings'
 					path: '#/settings'
-					image: 'gear.svg'
 
-				when 'check'
+				when name is 'check'
 					path: "#/@#{$rootScope.user.$id}"
-					image: 'check.svg'
 
 				else
-					return null
+					path: null
+
+			button.name = name
+			return button
 
 
 

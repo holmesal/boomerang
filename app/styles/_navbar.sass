@@ -17,6 +17,14 @@ navbar
 				position: absolute
 				top: 25%
 
+				@extend .animated
+				// @extend .fadeIn
+
+				&.ng-enter
+					animation: fadeIn 200ms
+				&.ng-leave
+					animation: fadeOut 200ms
+
 			&.left
 				float: left
 				img

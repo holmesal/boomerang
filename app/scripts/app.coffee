@@ -8,7 +8,8 @@ angular
     'ngRoute',
     'firebase',
     'holmesal.firesolver',
-    'classy'
+    'classy',
+    'ngAnimate'
   ])
   .config ($routeProvider) ->
     $routeProvider

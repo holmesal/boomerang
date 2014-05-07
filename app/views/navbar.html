@@ -1,4 +1,11 @@
 <div class="buttons animated fadeIn">
-	<a ng-if="left" ng-href="{{left.path}}" class="left"><img ng-src="../images/{{left.image}}"></a>
-	<a ng-if="right" ng-href="{{right.path}}" class="right"><img ng-src="../images/{{right.image}}"></a>
+	<!-- Left buttons -->
+	<a ng-if="left" ng-href="{{left.path}}" class="left">
+		<img ng-if="left.name == 'links'" ng-src="../images/list.svg">
+		<img ng-if="left.name == 'add'" ng-src="../images/plus.svg">
+	</a>
+	<a ng-if="right" ng-href="{{right.path}}" class="right">
+		<img ng-if="right.name == 'settings'" ng-src="../images/gear.svg">
+		<img ng-if="right.name == 'check'" ng-src="../images/check.svg">
+	</a>
 </div>
