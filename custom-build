@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-apt-get install nodejs
-apt-get install npm
+apt-get -y install nodejs
+apt-get -y install npm
 
 npm install && bower install && grunt build
