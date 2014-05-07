@@ -337,7 +337,7 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
-            'images/{,*/}*.{webp,svg}',
+            'images/{,*/}*.{webp}',
             'fonts/*'
           ]
         }, {
@@ -368,8 +368,8 @@ module.exports = function (grunt) {
       dist: [
         'coffee',
         'compass:dist',
-        'imagemin'
-        // 'svgmin'
+        'imagemin',
+        'svgmin'
       ]
     },
 

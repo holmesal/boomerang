@@ -51,6 +51,9 @@ angular
 
   .run ($rootScope, $location) ->
 
+    # Start fastclick
+    FastClick.attach document.body
+
     # Set the firebase URL
     $rootScope.firebaseURL = 'https://boomerangrang.firebaseio.com'
 

@@ -1,8 +1,8 @@
 <div class="buttons animated fadeIn">
 	<!-- Left buttons -->
-	<a ng-if="left" ng-href="{{left.path}}" class="left">
+	<a ng-if="left" ng-href="{{left.path}}" class="left" ng-class="{'needsclick': left.name == 'add'}">
 		<img ng-if="left.name == 'links'" src="../images/list.svg">
-		<img ng-if="left.name == 'add'" src="../images/plus.svg">
+		<img class="needsclick" ng-if="left.name == 'add'" src="../images/plus.svg">
 	</a>
 	<a ng-if="right" ng-href="{{right.path}}" class="right">
 		<img ng-if="right.name == 'settings'" src="../images/gear.svg">
