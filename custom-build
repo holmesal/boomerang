@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 # From https://github.com/heroku/heroku-buildpack-nodejs/blob/master/bin/compile
 
 # Convenience functions
