@@ -107,13 +107,12 @@ PATH=$build_dir/vendor/node/bin:$PATH
 # Run subsequent node/npm commands from the build path
 cd $build_dir
 
-ls -la
-
-cd $1
-
-ls -la
-
 npm install 
-npm install bower
+npm install -g bower
+npm install -g grunt-cli
 bower install
 grunt build
+
+ln -s dist www
+
+ls -la
