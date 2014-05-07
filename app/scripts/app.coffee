@@ -17,13 +17,13 @@ angular
       templateUrl: 'views/main.html'
       controller: 'MainCtrl'
       resolve: 
-        user: (Firesolver) -> Firesolver.currentUser()
+        user: ['Firesolver', (Firesolver) -> Firesolver.currentUser()]
     .when '/add',
       templateUrl: 'views/add.html'
       controller: 'AddCtrl'
       resolve: 
-        authUser: (Firesolver) -> Firesolver.authenticate()
-        user: (Firesolver) -> Firesolver.currentUser()
+        authUser: ['Firesolver', (Firesolver) -> Firesolver.authenticate()]
+        user: ['Firesolver', (Firesolver) -> Firesolver.currentUser()]
       navbar:
         left: 'links'
         right: 'settings'
@@ -31,9 +31,9 @@ angular
       templateUrl: 'views/links.html'
       controller: 'LinksCtrl'
       resolve: 
-        user: (Firesolver) -> Firesolver.currentUser()
-        owner: (Firesolver, $route) ->
-          Firesolver.get "users/#{$route.current.params.handle}"
+        user: ['Firesolver', (Firesolver) -> Firesolver.currentUser()]
+        owner: ['Firesolver', '$route', (Firesolver, $route) ->
+          Firesolver.get "users/#{$route.current.params.handle}"]
       navbar:
         left: 'add'
         right: 'settings'
@@ -41,8 +41,8 @@ angular
       templateUrl: 'views/settings.html'
       controller: 'SettingsCtrl'
       resolve: 
-        authUser: (Firesolver) -> Firesolver.authenticate()
-        user: (Firesolver) -> Firesolver.currentUser()
+        authUser: ['Firesolver', (Firesolver) -> Firesolver.authenticate()]
+        user: ['Firesolver', (Firesolver) -> Firesolver.currentUser()]
       navbar:
         right: 'check'
     .otherwise
