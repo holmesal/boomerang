@@ -13,7 +13,7 @@
     "angular-route": "1.2.15",
     "angularfire": "~0.7.1",
     "angular-classy": "~0.4.2",
-    "firesolver": "~0.1.0",
+    "firesolver": "~0.0.1",
     "colors": "https://github.com/holmesal/colors.git",
     "animate-sass": "https://github.com/tgdev/animate-sass.git#17d186c5d6ccfa310512d84ab27ac400bf969b89",
     "fastclick": "~1.0.1"
