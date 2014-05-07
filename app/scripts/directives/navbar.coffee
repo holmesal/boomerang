@@ -11,29 +11,69 @@ angular.module('boomerangApp')
 
 		# Update on route changes
 		$rootScope.$on '$routeChangeSuccess', (event, next, current) ->
-			scope.controller = next.$$route.controller
+			console.log next.$$route.navbar
 
-		# Watch for changes and set buttons
-		scope.$watch 'controller', (controller) ->
+			console.log $rootScope.user
 
-			console.log 'changed!'
+			if next.$$route.navbar
+			
+				scope.right = prepButton next.$$route.navbar.right
+				# scope.controller = next.$$route.controller
+				scope.left = prepButton next.$$route.navbar.left
 
-			switch controller
+			else
+				scope.left = scope.right = null
 
-				when 'LinksCtrl'
+			console.log scope.left
+			console.log scope.right
 
-					console.log 'links!'
-					scope.left = 'add'
-					scope.right = 'settings'
+		prepButton = (name) ->
 
-				when 'SettingsCtrl'
+			switch name
 
-					console.log 'settings!'
-					scope.right = 'save'
-					scope.left = ''
+				when 'links'
+					path: "#/@#{$rootScope.user.$id}"
+					image: 'list.svg'
 
-				when 'AddCtrl'
+				when 'add'
+					path: '#/add'
+					image: 'plus.svg'
 
-					console.log 'add!'
-					scope.left = 'links'
-					scope.right = 'settings'
+				when 'settings'
+					path: '#/settings'
+					image: 'gear.svg'
+
+				when 'check'
+					path: "#/@#{$rootScope.user.$id}"
+					image: 'check.svg'
+
+				else
+					return null
+
+
+
+
+		# # Watch for changes and set buttons
+		# scope.$watch 'controller', (controller) ->
+
+		# 	console.log 'changed!'
+
+		# 	switch controller
+
+		# 		when 'LinksCtrl'
+
+		# 			console.log 'links!'
+		# 			scope.left = 'add'
+		# 			scope.right = 'settings'
+
+		# 		when 'SettingsCtrl'
+
+		# 			console.log 'settings!'
+		# 			scope.right = 'save'
+		# 			scope.left = ''
+
+		# 		when 'AddCtrl'
+
+		# 			console.log 'add!'
+		# 			scope.left = 'links'
+		# 			scope.right = 'settings'

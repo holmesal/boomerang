@@ -47,6 +47,9 @@ angular.module('boomerangApp').classy.controller
 			@$.user.$update
 				name: authUser.thirdPartyUserData.name
 				image: authUser.thirdPartyUserData.profile_image_url
+				minInterval:
+					seconds: 15778500
+					human: "Six Months"
 			.then =>
 				# If it's their first time, send them to the welcome screen
 				if @firstTime

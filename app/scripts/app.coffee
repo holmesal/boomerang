@@ -23,6 +23,9 @@ angular
       resolve: 
         authUser: (Firesolver) -> Firesolver.authenticate()
         user: (Firesolver) -> Firesolver.currentUser()
+      navbar:
+        left: 'links'
+        right: 'settings'
     .when '/@:handle',
       templateUrl: 'views/links.html'
       controller: 'LinksCtrl'
@@ -30,12 +33,17 @@ angular
         user: (Firesolver) -> Firesolver.currentUser()
         owner: (Firesolver, $route) ->
           Firesolver.get "users/#{$route.current.params.handle}"
+      navbar:
+        left: 'add'
+        right: 'settings'
     .when '/settings',
       templateUrl: 'views/settings.html'
       controller: 'SettingsCtrl'
       resolve: 
         authUser: (Firesolver) -> Firesolver.authenticate()
         user: (Firesolver) -> Firesolver.currentUser()
+      navbar:
+        right: 'check'
     .otherwise
       redirectTo: '/'
 

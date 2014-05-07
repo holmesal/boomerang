@@ -1,1 +1,20 @@
-<p>This is the settings view.</p>
+<div class="settingsBlock">
+	<h1>Email address</h1>
+	<input type="text" class="form-control" placeholder="Your email" ng-model="user.email">
+</div>
+
+<div class="settingsBlock">
+	<h1>Email frequency</h1>
+	<p>You'll only be emailed articles you haven't read in at least:</p>
+	<select class="form-control" ng-model="minInterval" ng-options="option.human for option in options"></select>
+</div>
+
+<div class="settingsBlock">
+	<h1>Add by tweeting</h1>
+	<p>Add links by tweeting <a href="http://twitter.com/orbiterbot">@orbiterbot</a></p>
+</div>
+
+<div class="settingsBlock">
+	<h1>Logout</h1>
+	<a class="btn btn-danger" ng-click="logout()">Logout</a>
+</div>

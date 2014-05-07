@@ -1,4 +1,4 @@
 <div class="buttons animated fadeIn">
-	<a href="#/add" class="left"><img src="../images/plus.svg"></a>
-	<a href="#/settings" class="right"><img src="../images/gear.svg"></a>
+	<a ng-if="left" ng-href="{{left.path}}" class="left"><img ng-src="../images/{{left.image}}"></a>
+	<a ng-if="right" ng-href="{{right.path}}" class="right"><img ng-src="../images/{{right.image}}"></a>
 </div>

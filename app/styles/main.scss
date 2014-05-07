@@ -20,7 +20,9 @@ $medium: #818181;
 
 
 // Other stylesheets
+@import 'navbar';
 @import 'links';
+@import 'settings';
 
 
 .browsehappy {
@@ -44,6 +46,10 @@ h1{
     color: $dark;
     // font-size: 23px;
     font-size: 14pt;
+}
+
+p{
+    color: $medium;
 }
 
 /* Base style for animations */

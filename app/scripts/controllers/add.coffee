@@ -5,7 +5,7 @@ angular.module('boomerangApp').classy.controller
 
 	name: 'AddCtrl'
 
-	inject: ['$scope', '$rootScope', '$firebase', '$firebaseSimpleLogin', '$location', 'user', 'authUser']
+	inject: ['$scope', '$rootScope', '$firebase', '$location', 'user', 'authUser']
 
 	init: ->
 
@@ -39,10 +39,3 @@ angular.module('boomerangApp').classy.controller
 
 				# Redirect to the links page
 				@$location.path "/@#{@user.$id}"
-
-	logout: ->
-		ref = new Firebase @$rootScope.firebaseURL
-		@$.rootRef = @$firebase ref
-		@$.auth = @$firebaseSimpleLogin ref
-		@$.auth.$logout()
-		@$location.path '/'
