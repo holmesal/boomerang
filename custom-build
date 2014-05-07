@@ -115,7 +115,7 @@ npm install
 npm install -g bower
 npm install -g grunt-cli
 bower install --allow-root
-grunt build-server --verbose --force
+grunt build --verbose --force
 
 ls -la
 
