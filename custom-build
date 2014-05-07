@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
-BINDIR=$(dirname "$0")
-
 echo "The directory is"
-echo BINDIR
+echo $1
 
 apt-get -y install nodejs
 apt-get -y install npm
 
 ls -la
 
-cd BINDIR
+cd $1
 
 ls -la
 
