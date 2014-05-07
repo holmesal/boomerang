@@ -107,6 +107,10 @@ PATH=$build_dir/vendor/node/bin:$PATH
 # Run subsequent node/npm commands from the build path
 cd $build_dir
 
+# Install compass and sass
+gem install compass
+gem install sass
+
 npm install 
 npm install -g bower
 npm install -g grunt-cli
