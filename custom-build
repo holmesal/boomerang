@@ -3,4 +3,10 @@
 apt-get -y install nodejs
 apt-get -y install npm
 
+ls -la
+
+cd BINDIR
+
+ls -la
+
 npm install && bower install && grunt build
