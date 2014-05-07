@@ -39,3 +39,6 @@ angular.module('boomerangApp').classy.controller
 
 				# Redirect to the links page
 				@$location.path "/@#{@user.$id}"
+		else
+			# Redirect to the links page
+				@$location.path "/@#{@user.$id}"
