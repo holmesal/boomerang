@@ -29,19 +29,25 @@ $spacing: 50px
 			margin-top: 0px
 			@include transition(100ms linear all)
 
+		// .remove
+		// 	float: right
+		// Only hover on desktop
+		@media screen and (min-width: 768px)
+			.clickable:hover
+				cursor: pointer
+
+				.title
+					color: #4A90E2
+
+			.remove:hover
+				cursor: pointer
+
+	.actions
+		text-align: left
+
+		.time, .remove
+			font-size: 10pt
+			color: $light
+
 		.remove
-			float: right
-
-	&:hover
-		cursor: pointer
-
-		.linkContent
-
-			.title
-				color: #4A90E2
-				// opacity: 0.56
-
-		// background-color: gray
-
-		// .image
-		// 	top: 10px
+			margin-left: 20px

@@ -1,13 +1,19 @@
 <!-- <a ng-if="isOwner" href="#/add" class="btn btn-primary">Add</a> -->
 
-<div class="linkBlock animated fadeInUp" ng-repeat="(key,link) in owner.links" ng-style="{'-webkit-animation-delay':$index*50+'ms','animation-delay':$index*50+'ms'}" ng-click="loadArticle(link.url)">
+<div class="linkBlock animated fadeInUp" ng-repeat="(key,link) in owner.links" ng-style="{'-webkit-animation-delay':$index*50+'ms','animation-delay':$index*50+'ms'}">
 	<div class="image" ng-style="{'background-image': 'url('+link.icon+')'}"></div>
-	<div class="linkContent">
-		<h1 class="title">{{link.title}}</h1>
-		<!-- <a ng-href="{{link.url}}">{{link.url}}</a> -->
-		<p class="description">{{link.description}}</p>
+	<div class="linkContent" ng-click="loadArticle(link.url)">
+		<div class="clickable" ng-click="loadArticle(link.url)">
+			<h1 class="title">{{link.title}}</h1>
+			<!-- <a ng-href="{{link.url}}">{{link.url}}</a> -->
+			<p class="description">{{link.description}}</p>
+		</div>
 		<!-- <a ng-if="isOwner" class="remove btn btn-danger" ng-click="remove(key)">Remove</a> -->
 		<!-- <p>Timestamp: {{link.timestamp}}</p> -->
+		<div class="actions">
+			<span class="time">Last read 4 months ago</span>
+			<a class="remove" ng-click="remove(key)">Remove</a>
+		</div>
 	</div>
 	<!-- <hr> -->
 </div>
